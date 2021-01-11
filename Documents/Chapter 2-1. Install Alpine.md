@@ -1,4 +1,4 @@
-# 2-1. Install Alpine
+# Chapter 2-1. Install Alpine
 
 * * *
 ## 目錄
@@ -95,7 +95,7 @@
 * 使用預設 `enter鍵` * 2 <br />
 
 ---
-<h3 id="url">設定 `alpine repository` 與 `ssh server`</h3>
+<h3 id="url">設定 alpine repository 與 ssh server</h3>
 
 * 注意，若網路沒有通， repository 會找不到
 
@@ -138,8 +138,11 @@
 
 ![b. reboot](https://i.imgur.com/EkA82St.png)
 
-* 安裝至硬碟後須重新開機，並退出 iso 。
+* 安裝至硬碟後須重新開機，並退出 iso .
 
 輸入： `reboot` 
 
 ---
+[返回至 - 目錄](https://github.com/xuan103/Alpine_2021)
+
+[下一頁 - Chapter 2-2. Start Alpine](https://github.com/xuan103/Alpine_2021/blob/main/Documents/Chapter%202-2.%20Start%20Alpine.md)
