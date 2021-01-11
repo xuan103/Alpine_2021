@@ -17,9 +17,9 @@
 
 Alpine Linux 是基於 musl libc 和  busybox 及 apk 的輕量級 Linux 發行版。
 
-* 以下將使用虛擬機安裝 Alpine。<br /> <br />
+* 以下將使用虛擬機安裝 Alpine。
 
-
+---
 <h1 id="method">方法</h1> 
 
 <h2 id="download">下載 Alpine</h2>
@@ -30,3 +30,7 @@ Alpine Linux 是基於 musl libc 和  busybox 及 apk 的輕量級 Linux 發行�
 
 ![download](https://i.imgur.com/FhTWznx.png)
 
+---
+[返回至 - 目錄](https://github.com/xuan103/Alpine_2021)
+
+[下一頁 - Chapter 2-1. Install Alpine](https://github.com/xuan103/Alpine_2021/blob/main/Documents/Chapter%202-1.%20Install%20Alpine.md)
