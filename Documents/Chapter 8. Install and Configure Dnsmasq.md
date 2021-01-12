@@ -1,12 +1,14 @@
-# Install and Configure Dnsmasq
+# Chapter 8. Install and Configure Dnsmasq
 
 * * * 
 ## 目錄
--    [Installing Dnsmasq on Ubuntu 18.04](#Step 1)
+-    [Installing Dnsmasq on Ubuntu 18.04](#Step1)
 
--    [Adding DNS records to Dnsmasq](#Step 2)
+-    [Adding DNS records to Dnsmasq](#Step2)
 
--    [Testing Dnsmasq DNS functionality](#Step 3) 
+-    [Testing Dnsmasq DNS functionality](#Step3) 
+
+-    [Configure Dnsmasq as DHCP Server](#Step4) 
 
 * * *
 
@@ -62,8 +64,9 @@ $ `sudo vim /etc/resolv.conf`
 
     nameserver 127.0.0.1
     nameserver 8.8.8.8
-    
-#Configure Dnsmasq as DHCP Server
+
+---
+<h1 id="Step 4">Configure Dnsmasq as DHCP Server</h2>
 
 * Default gateway IP address
 * DNS server IP address (Probably Dnsmasq or different DNS server)
