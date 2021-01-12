@@ -1,4 +1,4 @@
-# Chapter 6. NAT & DNAT
+# Chapter 7. NAT & DNAT
 
 * * *
 ## 目錄
