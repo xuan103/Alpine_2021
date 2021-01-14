@@ -48,7 +48,7 @@ $ `sudo systemctl restart dnsmasq`
 ---
 <h1 id="Step 2">Adding DNS records to Dnsmasq</h2>
 
-$ `sudo vim /etc/hosts`
+$ `sudo nano /etc/hosts`
     
     10.1.3.4 server1.mypridomain.com
     10.1.4.4 erp.mypridomain.com 
