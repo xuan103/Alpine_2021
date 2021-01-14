@@ -48,8 +48,6 @@
         psk="輸入 Wifi 密碼"
     }
 
-![nanoadd](https://i.imgur.com/HGXQvtb.png)
-
 
 <h3 id="test">測試連線 Wifi</h3>
 
@@ -73,7 +71,7 @@
 
 重新執行 wpa_supplicant，並讀取 wpa_supplicant.conf 設定
 
-`sudo wpa_supplicant -B -i wlx7cdd90ea4126 -c /etc/wpa_supplicant/wpa_supplicant.conf`
+`sudo wpa_supplicant -B -i wlx7cdd90ea4126 -D wext -c /etc/wpa_supplicant/wpa_supplicant.conf`
 
 若回傳以下訊息，請忽略掉
     
@@ -103,42 +101,40 @@
 
 * `sudo nano /etc/systemd/system/wpa_supplicant.service`
 
-![wpa_supplicant](https://i.imgur.com/fVcfoLU.png)
+```
+[Unit]
+Description=WPA supplicant
+Before=network.target
+After=dbus.service
+Wants=network.target
+IgnoreOnIsolate=true
 
-    
-    [Unit]
-    Description=WPA supplicant
-    Before=network.target
-    After=dbus.service
-    Wants=network.target
-    IgnoreOnIsolate=true
+[Service]
+Type=dbus
+BusName=fi.w1.wpa_supplicant1
+ExecStart=/sbin/wpa_supplicant -u -s -c /etc/wpa_supplicant/wpa_supplicant.conf -i  wlx7cdd90ea4126
 
-    [Service]
-    Type=dbus
-    BusName=fi.w1.wpa_supplicant1
-    ExecStart=/sbin/wpa_supplicant -u -s -c /etc/wpa_supplicant/wpa_supplicant.conf -i  wlx7cdd90ea4126
+[Install]
+WantedBy=multi-user.target
+Alias=dbus-fi.w1.wpa_supplicant1.service
+```
 
-    [Install]
-    WantedBy=multi-user.target  
-    Alias=dbus-fi.w1.wpa_supplicant1.service
-    
 * `sudo nano /etc/systemd/system/dhclient.service`
 
-![dhclient-service](https://i.imgur.com/L2qzb8E.png)
+```
+[Unit]
+Description= DHCP Client
+Before=network.target
+After=wpa_supplicant.service
 
-    
-    [Unit]
-    Description= DHCP Client
-    Before=network.target
-    After=wpa_supplicant.service
+[Service]
+Type=simple
+ExecStart=/sbin/dhclient wlx7cdd90ea4126
 
-    [Service]
-    Type=simple
-    ExecStart=/sbin/dhclient wlx7cdd90ea4126
+[Install]
+WantedBy=multi-user.target
+```
 
-    [Install]
-    WantedBy=multi-user.target
-    
 * `sudo systemctl enable dhclient.service`
 
 * `sudo reboot`
