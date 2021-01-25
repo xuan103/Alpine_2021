@@ -60,7 +60,7 @@ $ `sudo systemctl restart dnsmasq`
 ---
 <h1 id="Step 3">Testing Dnsmasq DNS functionality</h2>
 
-$ `sudo vim /etc/resolv.conf`
+$ `sudo nano /etc/resolv.conf`
 
     nameserver 127.0.0.1
     nameserver 8.8.8.8
@@ -75,6 +75,8 @@ $ `sudo vim /etc/resolv.conf`
 * NTP server
 
 See below example
+
+$ `sudo nano /etc/dnsmasq.conf`
     
     dhcp-range=192.168.40.130,192.168.40.230,24h
     dhcp-option=option:router,192.168.40.254
