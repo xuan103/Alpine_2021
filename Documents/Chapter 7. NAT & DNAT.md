@@ -46,11 +46,27 @@ gw@gw:~$ `sysctl net.ipv4.ip_forward`
     
 `sudo iptables -t nat -A POSTROUTING -o wlx7cdd90ea4126 -j MASQUERADE`
 
+OR `sudo iptables -t nat -A POSTROUTING -s 192.168.40.0/24 -o wlx7cdd90ea4126 -j MASQUERADE`
+
+- iptables: 過濾封包
+- -t: table, -A: append
+- -s: 來源 source
+- -o: output
+- wlx7cdd90ea4126: 連接外網的網卡
+- MASQUERADE: 偽裝
+
+設定啟動封包轉遞 (gw 電腦), 輸入 `1` 機器內封包可互傳 (預設為 0)
+
 `sudo apt-get install iptables-persistent -y`
     
     ipv4 -- yes 
     ipv6 -- yes
-    
+
+
+$ `echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward`
+
+$ `sudo iptables -t nat -L -n`
+
 ---
 <h3 id="DNAT">DNAT</h3> 
 
