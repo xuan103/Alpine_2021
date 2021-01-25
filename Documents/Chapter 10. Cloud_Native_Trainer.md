@@ -11,6 +11,13 @@
 
 ![Cloud_Native_Trainer](https://i.imgur.com/cHzNjLN.png)
 
+nano autoadd.sh
+
+```
+
+
+```
+
 
 以下為步驟：
 
